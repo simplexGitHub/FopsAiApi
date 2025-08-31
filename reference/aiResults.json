@@ -107,6 +107,10 @@
           },
           "location": {
             "type": "object",
+            "required": [
+              "x",
+              "y"
+            ],
             "description": "Location in frame coordinates",
             "properties": {
               "x": {
@@ -134,7 +138,10 @@
         },
         "required": [
           "id",
-          "location"
+          "location",
+          "length",
+          "width",
+          "frame"
         ]
       },
       "detections": {
