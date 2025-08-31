@@ -58,7 +58,7 @@
             "$ref": "#/components/responses/response"
           }
         },
-        "description": "Update the car objects detections - location and frame",
+        "description": "Update the car objects detections - location and frame\nEach detections message overides the previous ones",
         "requestBody": {
           "content": {
             "application/json": {
