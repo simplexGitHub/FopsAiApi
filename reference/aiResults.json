@@ -1,0 +1,156 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "aiResults",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/api/aiResults": {
+      "parameters": [],
+      "post": {
+        "summary": "aiResults",
+        "operationId": "post-users-userId",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/response"
+          }
+        },
+        "description": "The AI car characteristics ",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "aiResults": {
+                    "$ref": "#/components/schemas/aiResults"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/detections": {
+      "post": {
+        "summary": "detections",
+        "operationId": "post-api-detections",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/response"
+          }
+        },
+        "description": "Update the car objects detections - location and frame",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "detections": {
+                    "$ref": "#/components/schemas/detections"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "aiResults": {
+        "title": "aiResults",
+        "type": "object",
+        "properties": {
+          "carModel": {
+            "type": "string"
+          },
+          "carColor": {
+            "type": "string"
+          },
+          "licensePlate": {
+            "type": "string"
+          },
+          "carMake": {
+            "type": "string"
+          }
+        }
+      },
+      "detection": {
+        "title": "detection",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "location": {
+            "type": "object",
+            "properties": {
+              "x": {
+                "type": "integer"
+              },
+              "y": {
+                "type": "integer"
+              }
+            }
+          },
+          "length": {
+            "type": "integer"
+          },
+          "width": {
+            "type": "integer"
+          },
+          "frame": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "location"
+        ]
+      },
+      "detections": {
+        "title": "detections",
+        "type": "object",
+        "properties": {
+          "detections": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/detection"
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "response": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "description": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "success"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
