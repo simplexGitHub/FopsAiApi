@@ -20,7 +20,7 @@
             "$ref": "#/components/responses/response"
           }
         },
-        "description": "The AI car characteristics.\nEach call the parameters are replaced (e.g sending carColor \"blue\" will replce last sent carColor ",
+        "description": "The AI car characteristics.\nEach call the parameters are replaced (e.g sending carColor \"blue\" will replce last sent carColor )",
         "requestBody": {
           "content": {
             "application/json": {
