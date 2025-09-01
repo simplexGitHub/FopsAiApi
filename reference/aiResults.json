@@ -58,7 +58,7 @@
             "$ref": "#/components/responses/response"
           }
         },
-        "description": "Update the car objects detections - location and frame\nEach detections message overides the previous ones",
+        "description": "Update the car objects detections - location and frame\nEach detections message overides the previous ones.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -71,7 +71,8 @@
                 }
               }
             }
-          }
+          },
+          "description": ""
         }
       }
     }
@@ -95,7 +96,7 @@
             "type": "string"
           }
         },
-        "description": "The car parameters\nAll can be optional"
+        "description": "The car parameters.\nAll fields can be optional."
       },
       "detection": {
         "title": "detection",
@@ -154,7 +155,8 @@
               "$ref": "#/components/schemas/detection"
             }
           }
-        }
+        },
+        "description": "In order to keep tracking the targets the sender should keep the same ID for the same target."
       }
     },
     "responses": {
@@ -179,6 +181,7 @@
           }
         }
       }
-    }
+    },
+    "examples": {}
   }
 }
